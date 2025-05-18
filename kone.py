@@ -68,7 +68,7 @@ def get_imgs(soup):
     results = []
     for target in targets:
         url = target["src"]
-
+        """
         respone = requests.head(url, headers={"User-Agent": USER_AGENT})
 
         if respone.status_code == 200:
@@ -84,7 +84,8 @@ def get_imgs(soup):
                 ext = "jpg"
         else:
             ext = "jpg"
-
+        """
+        ext = "webp"
         filename = f"{len(results):04}.{ext}"
         results.append(File({"url": url, "name": filename}))
 
